@@ -1,4 +1,4 @@
-export class SlideListItem extends HTMLElement {
+export class SlideTitle extends HTMLElement {
   get slideTitle() {
     return this.getAttribute("title");
   }
@@ -27,7 +27,7 @@ export class SlideListItem extends HTMLElement {
             font-family: "Montserrat", sans-serif;
           }
         </style>
-        <div class="list-item"></div>
+        <h1>sadfsadf</h1>
       `;
   }
 }
