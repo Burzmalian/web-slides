@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web slides</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script type="module" crossorigin src="/assets/index.js"></script>
+  </head>
+  <body>
+    <!-- add url to image under image attribute -->
+    <slide-wrapper image="artificial-intelligence.jpg">
+      <!-- use slide-title for heading text -->
+      <slide-title>This is where the title goes</slide-title>
+
+      <!-- add number for slide-list-item order -->
+      <slide-list-item number="1">
+        <!-- inside slide-list-item add slot="icon" from copied html in google fonts for icons -->
+        <span slot="icon" class="material-symbols-outlined">
+          emoji_objects
+        </span>
+
+        <!-- add slide-list-item text with slot="text" -->
+        <span slot="text">Text For the list item</span>
+      </slide-list-item>
+    </slide-wrapper>
+    
+  </body>
+</html>
