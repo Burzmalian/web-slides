@@ -1,10 +1,6 @@
 import logo from "/logo.svg";
 
 export class SlideWrapper extends HTMLElement {
-  get slideTitle() {
-    return this.getAttribute("title");
-  }
-
   get slideImage() {
     return this.getAttribute("image");
   }
@@ -68,17 +64,6 @@ export class SlideWrapper extends HTMLElement {
           .content {
             padding: 2rem;
           }
-          h1 {
-            font-weight: 600;
-            font-size: 2rem;
-            line-height: 1.1;
-            margin: 0 0 2.5rem 0;
-          }
-          @media screen and (min-width: 600px) {
-            h1 {
-              font-size: 3rem;
-            }
-          }
           .list {
             margin: 0 0 2rem 0;
             padding: 0;
@@ -92,7 +77,6 @@ export class SlideWrapper extends HTMLElement {
             <img src="${this.slideImage}" alt="" />
           </div>
           <div class="content">
-            <h1>${this.slideTitle}</h1>
             <ul class="list">
               <slot></slot>
             </ul>
