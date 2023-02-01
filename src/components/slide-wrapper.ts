@@ -1,8 +1,10 @@
-import logo from "/logo.svg";
-
 export class SlideWrapper extends HTMLElement {
   get slideImage() {
     return this.getAttribute("image");
+  }
+
+  get slideLogo() {
+    return this.getAttribute("logo");
   }
 
   constructor() {
@@ -71,7 +73,7 @@ export class SlideWrapper extends HTMLElement {
         </style>
         <div class="container">
           <div class="header">
-            <img src="${logo}" alt="" />
+            <img src="${this.slideLogo}" alt="" />
           </div>
           <div class="image">
             <img src="${this.slideImage}" alt="" />
