@@ -1,4 +1,4 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const r of t.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&s(r)}).observe(document,{childList:!0,subtree:!0});function n(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?t.credentials="include":e.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=n(e);fetch(e.href,t)}})();const a="/web-slides/logo.svg";class l extends HTMLElement{get slideImage(){return this.getAttribute("image")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))s(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const o of t.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&s(o)}).observe(document,{childList:!0,subtree:!0});function n(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?t.credentials="include":e.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(e){if(e.ep)return;e.ep=!0;const t=n(e);fetch(e.href,t)}})();class a extends HTMLElement{get slideImage(){return this.getAttribute("image")}get slideLogo(){return this.getAttribute("logo")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
         <style>
           html {
             box-sizing: border-box;
@@ -56,7 +56,7 @@
         </style>
         <div class="container">
           <div class="header">
-            <img src="${a}" alt="" />
+            <img src="${this.slideLogo}" alt="" />
           </div>
           <div class="image">
             <img src="${this.slideImage}" alt="" />
@@ -67,7 +67,7 @@
             </ul>
           </div>
         </div>
-      `)}}class d extends HTMLElement{get slideNumber(){return this.getAttribute("number")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
+      `)}}class l extends HTMLElement{get slideNumber(){return this.getAttribute("number")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
         <style>
           html {
             box-sizing: border-box;
@@ -186,7 +186,7 @@
             <slot name="text"></slot>
           </div>
         </li>
-      `)}}class m extends HTMLElement{get slideTitle(){return this.getAttribute("title")}get slideImage(){return this.getAttribute("image")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
+      `)}}class d extends HTMLElement{get slideTitle(){return this.getAttribute("title")}get slideImage(){return this.getAttribute("image")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
         <style>
           html {
             box-sizing: border-box;
@@ -210,4 +210,4 @@
           }
         </style>
         <h1><slot></slot></h1>
-      `)}}customElements.define("slide-wrapper",l);customElements.define("slide-list-item",d);customElements.define("slide-title",m);
+      `)}}customElements.define("slide-wrapper",a);customElements.define("slide-list-item",l);customElements.define("slide-title",d);
