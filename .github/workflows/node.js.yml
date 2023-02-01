@@ -2,19 +2,18 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Release to github pages CI
-
+permissions:
+  contents: write
 on:
   workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [18.0.0]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -23,8 +22,8 @@ jobs:
         version: 6.0.2
     - run: pnpm install
     - run: pnpm build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        folder: dist
