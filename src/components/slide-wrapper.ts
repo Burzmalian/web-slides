@@ -52,7 +52,12 @@ export class SlideWrapper extends HTMLElement {
             width: 100%;
           }
           .content {
-            padding: 2rem;
+            padding: 1rem;
+          }
+          @media screen and (min-width: 600px) {
+            .content {
+              padding: 1.75rem;
+            }
           }
           .list {
             margin: 0 0 2rem 0;
@@ -248,9 +253,12 @@ export class SlideWrapper extends HTMLElement {
               </g>
             </svg>
           </div>
-          <div class="image">
-            <img src="${this.slideImage}" alt="" />
-          </div>
+          ${this.slideImage
+            ? `<div class="image"><img src="${this.slideImage}" alt="" /></div>`
+            : ``}
+
+          <slot name="other"></slot>
+
           <div class="content">
             <ul class="list">
               <slot></slot>

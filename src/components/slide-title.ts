@@ -28,13 +28,13 @@ export class SlideTitle extends HTMLElement {
           }
           h1 {
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.75rem;
             line-height: 1.1;
             margin: 0 0 2.5rem 0;
           }
           @media screen and (min-width: 600px) {
             h1 {
-              font-size: 3rem;
+              font-size: 2.25rem;
             }
           }
         </style>

@@ -80,6 +80,7 @@ export class SlideListItem extends HTMLElement {
             top: 10px;
             left: -4px;
             transform: rotate(45deg);
+            z-index: -1;
           }
 
           @keyframes text-in {
@@ -113,6 +114,7 @@ export class SlideListItem extends HTMLElement {
             }
             .list__text::before {
               top: 16px;
+              left: -6px;
             }
           }
         </style>
