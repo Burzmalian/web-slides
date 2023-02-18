@@ -26,6 +26,7 @@ export class SlideWrapper extends HTMLElement {
             margin: 0 auto;
             max-width: 800px;
             background: #e8eff5;
+            overflow: hidden;
           }
           .header {
             display: flex;
@@ -45,18 +46,9 @@ export class SlideWrapper extends HTMLElement {
           .image {
             width: auto;
             max-width: 100%;
-            height: 200px;
             position: relative;
           }
-          @media screen and (min-width: 600px) {
-            .image {
-              height: 250px;
-            }
-          }
           .image img {
-            object-fit: cover;
-            position: absolute;
-            height: 100%;
             width: 100%;
           }
           .content {
