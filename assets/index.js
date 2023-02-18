@@ -39,7 +39,12 @@
             width: 100%;
           }
           .content {
-            padding: 2rem;
+            padding: 1rem;
+          }
+          @media screen and (min-width: 600px) {
+            .content {
+              padding: 1.75rem;
+            }
           }
           .list {
             margin: 0 0 2rem 0;
@@ -235,9 +240,10 @@
               </g>
             </svg>
           </div>
-          <div class="image">
-            <img src="${this.slideImage}" alt="" />
-          </div>
+          ${this.slideImage?`<div class="image"><img src="${this.slideImage}" alt="" /></div>`:""}
+
+          <slot name="other"></slot>
+
           <div class="content">
             <ul class="list">
               <slot></slot>
@@ -313,6 +319,7 @@
             top: 10px;
             left: -4px;
             transform: rotate(45deg);
+            z-index: -1;
           }
 
           @keyframes text-in {
@@ -346,6 +353,7 @@
             }
             .list__text::before {
               top: 16px;
+              left: -6px;
             }
           }
         </style>
@@ -376,13 +384,13 @@
           }
           h1 {
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.75rem;
             line-height: 1.1;
             margin: 0 0 2.5rem 0;
           }
           @media screen and (min-width: 600px) {
             h1 {
-              font-size: 3rem;
+              font-size: 2.25rem;
             }
           }
         </style>
