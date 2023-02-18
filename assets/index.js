@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const c of document.querySelectorAll('link[rel="modulepreload"]'))i(c);new MutationObserver(c=>{for(const t of c)if(t.type==="childList")for(const l of t.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function s(c){const t={};return c.integrity&&(t.integrity=c.integrity),c.referrerpolicy&&(t.referrerPolicy=c.referrerpolicy),c.crossorigin==="use-credentials"?t.credentials="include":c.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function i(c){if(c.ep)return;c.ep=!0;const t=s(c);fetch(c.href,t)}})();class r extends HTMLElement{get slideImage(){return this.getAttribute("image")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const c of document.querySelectorAll('link[rel="modulepreload"]'))s(c);new MutationObserver(c=>{for(const t of c)if(t.type==="childList")for(const l of t.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&s(l)}).observe(document,{childList:!0,subtree:!0});function i(c){const t={};return c.integrity&&(t.integrity=c.integrity),c.referrerpolicy&&(t.referrerPolicy=c.referrerpolicy),c.crossorigin==="use-credentials"?t.credentials="include":c.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(c){if(c.ep)return;c.ep=!0;const t=i(c);fetch(c.href,t)}})();class r extends HTMLElement{get slideImage(){return this.getAttribute("image")}constructor(){super(),this.attachShadow({mode:"open"}),this.render()}render(){this.shadowRoot&&(this.shadowRoot.innerHTML=`
         <style>
           html {
             box-sizing: border-box;
@@ -13,6 +13,7 @@
             margin: 0 auto;
             max-width: 800px;
             background: #e8eff5;
+            overflow: hidden;
           }
           .header {
             display: flex;
@@ -32,18 +33,9 @@
           .image {
             width: auto;
             max-width: 100%;
-            height: 200px;
             position: relative;
           }
-          @media screen and (min-width: 600px) {
-            .image {
-              height: 250px;
-            }
-          }
           .image img {
-            object-fit: cover;
-            position: absolute;
-            height: 100%;
             width: 100%;
           }
           .content {
